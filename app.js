@@ -38,7 +38,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Boukas:x5FPWYe83k5zE0wo@cluster0.robql.mongodb.net/CurrencyConvert?retryWrites=true&w=majority"
+    URI
   )
   .then(() => {
     app.listen(5000);
