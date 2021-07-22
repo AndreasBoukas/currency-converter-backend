@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const currencyRoutes = require("./routes/currency-routes");
 const userRoutes = require("./routes/users-routes");
 const HttpError = require("./models/http-error");
+require('dotenv').config()
 
 const app = express();
 
@@ -38,7 +39,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Boukas:x5FPWYe83k5zE0wo@cluster0.robql.mongodb.net/CurrencyConvert?retryWrites=true&w=majority"
+    process.env.DB_URI
   )
   .then(() => {
     app.listen(5000);
