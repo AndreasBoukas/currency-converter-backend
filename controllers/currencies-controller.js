@@ -49,7 +49,7 @@ const getCurrencies = async (req, res, next) => {
     );
     return next(error);
   }
-  res.json({ Currencies: currencies });
+  res.json({ currencies: currencies });
 };
 
 const postNewCurrency = async (req, res, next) => {
@@ -76,7 +76,7 @@ const postNewCurrency = async (req, res, next) => {
   try {
     user = await User.findById(creator);
   } catch (err) {
-    const error = new HttpError("Creating place failed,please try again", 500);
+    const error = new HttpError("Creating Currency failed,please try again", 500);
     return next(error);
   }
 
