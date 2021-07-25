@@ -39,7 +39,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    process.env.DB_URI
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.robql.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
     app.listen(5000);
